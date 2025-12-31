@@ -5,8 +5,7 @@ project(app LANGUAGES C)
 
 target_sources(app PRIVATE src/main.c)
 
-target_sources(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../apps/HelloWorld/src/HelloWorld.c)
-target_include_directories(app PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../apps/HelloWorld/src)
-
-target_sources(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../apps/DataSender/src/DataSender.c)
-target_include_directories(app PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../apps/DataSender/src)
+file(GLOB APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../apps/*/src/*.c")
+target_sources(app PRIVATE ${APP_SOURCES})
+file(GLOB APP_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/../apps/*/src")
+target_include_directories(app PUBLIC ${APP_INCLUDES})
