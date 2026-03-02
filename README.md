@@ -5,8 +5,9 @@ Further improvements could be: Device specific configuration files/code which ar
 This has been tested on Ubuntu 24.04
 
 1. Create a directory: **zephyrproject**
-2. Go into the zephyrproject directory and do: **git clone git@github.com:lane-westlund/genericZephyrProject.git**
-3. Follow the "getting started" instructions here (adjusting for location of your zephyrproject directory created above): https://docs.zephyrproject.org/latest/develop/getting_started/index.html
-4. Go into the zephyrproject director and build using: **west build -p always -b qemu_x86 genericZephyrProject/project_1/**
-5. Test using: **west build -t run**
+2. Follow the "getting started" instructions here but stop before executing **west init** (adjusting for location of your zephyrproject directory created above): https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+3. In the **zephyrproject** directory, perform **west init -m https://github.com/your-org/your-manifest-repo.git** followed by **west update**
+4. Continue with the getting started guide above, following the steps immediately after **west update**
+5. Go into the zephyrproject director and build using: **west build -p always -b qemu_x86 genericZephyrProject/project_1/**
+6. Test using: **west build -t run**
 
