@@ -1,7 +1,4 @@
 manifest:
-  defaults:
-    revision: main
-
   remotes:
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
@@ -11,12 +8,12 @@ manifest:
     revision: main
 
   projects:
-
     - name: zephyr
-      remote:  zephyrproject-rtos
+      remote: zephyrproject-rtos
       repo-path: zephyr
       revision: main
       import: true
 
   self:
     path: genericZephyrProject
+    
